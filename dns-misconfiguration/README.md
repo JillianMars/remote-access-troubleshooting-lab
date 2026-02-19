@@ -10,7 +10,7 @@ Simulate a DNS failure on macOS and troubleshoot the issue by isolating hostname
 
 Before introducing failure, network connectivity and DNS resolution were verified.
 
-Commands used:
+### Commands Used
 
 ```
 ifconfig en0
@@ -20,13 +20,12 @@ ping google.com
 
 
 
-Result:  
+### Result
 Network connectivity and hostname resolution were functioning normally.
+
 ### Screenshot
 
 ![Baseline](../01-working-network-firstpng.png)
-
-
 ---
 
 ## 2. Failure Simulation
@@ -36,6 +35,8 @@ Manually changed the DNS server to an invalid address:
 
 
 This simulates a common enterprise issue where DNS settings are misconfigured.
+
+### Screenshot
 ![Bad DNS Set](../02-set-bad-dns-1.2.3.4.png)
 
 
@@ -58,6 +59,8 @@ Conclusion:
 The network layer was operational, but DNS resolution was failing.
 
 Root cause identified as DNS misconfiguration.
+
+### Screenshot
 ![DNS Broken - Hostname Fails](../03-dns-broken-hostname-fails.png)
 
 
@@ -67,10 +70,12 @@ Root cause identified as DNS misconfiguration.
 
 Restored original DNS settings.
 
-Flushed DNS cache:
+Flushed DNS cache using:
 ```
 sudo dscacheutil -flushcache
 ```
+
+### Screenshot
 ![Removed Bad DNS](../04-removed-bad-dns-restored-settings.png)
 
 
@@ -82,9 +87,10 @@ Re-tested hostname resolution:
 ```
 ping google.com
 ```
-
-Result:  
+### Result
 Hostname resolution restored successfully.
+
+### Screenshot
 ![DNS Fixed](../05-dns-fixed-working-again.png)
 
 
