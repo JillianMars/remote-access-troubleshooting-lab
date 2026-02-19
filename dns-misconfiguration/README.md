@@ -11,9 +11,14 @@ Simulate a DNS failure on macOS and troubleshoot the issue by isolating hostname
 Before introducing failure, network connectivity and DNS resolution were verified.
 
 Commands used:
+
+```
 ifconfig en0
 scutil --dns | grep nameserver
 ping google.com
+```
+
+
 
 Result:  
 Network connectivity and hostname resolution were functioning normally.
@@ -55,15 +60,20 @@ Root cause identified as DNS misconfiguration.
 Restored original DNS settings.
 
 Flushed DNS cache:
+```
 sudo dscacheutil -flushcache
-
+```
 
 ---
 
 ## 5. Validation
 
 Re-tested hostname resolution:
+```
 ping google.com
+```
+
+
 
 
 Result:  
