@@ -22,6 +22,9 @@ ping google.com
 
 Result:  
 Network connectivity and hostname resolution were functioning normally.
+### Screenshot
+
+![Baseline](01-network-working-before-break.png)
 
 ---
 
@@ -32,6 +35,7 @@ Manually changed the DNS server to an invalid address:
 
 
 This simulates a common enterprise issue where DNS settings are misconfigured.
+![Bad DNS Set](02-set-bad-dns-1.2.3.4.png)
 
 ---
 
@@ -52,6 +56,7 @@ Conclusion:
 The network layer was operational, but DNS resolution was failing.
 
 Root cause identified as DNS misconfiguration.
+![DNS Broken](03-dns-broken-hostname-fails.png)
 
 ---
 
@@ -63,6 +68,7 @@ Flushed DNS cache:
 ```
 sudo dscacheutil -flushcache
 ```
+![DNS Restored](04-removed-bad-dns-restored-settings.png)
 
 ---
 
@@ -73,11 +79,9 @@ Re-tested hostname resolution:
 ping google.com
 ```
 
-
-
-
 Result:  
 Hostname resolution restored successfully.
+![DNS Fixed](05-dns-fixed-working-again.png)
 
 ---
 
