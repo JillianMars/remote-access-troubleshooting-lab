@@ -92,3 +92,8 @@ Executed:
 
 ```bash
 nslookup vp.corp.local
+```
+
+**Screenshot 06 – nslookup confirms DNS resolution failure**
+
+![nslookup VPN hostname failure](06_nslookup_VPN_Hostname_Failure.PNG)
