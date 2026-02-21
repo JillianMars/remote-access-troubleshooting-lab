@@ -68,7 +68,7 @@ Reviewed the Networking tab and confirmed:
 
 This verifies the VPN adapter is properly bound to the TCP/IP stack and there is no missing protocol issue.
 
-![VPN Profile Creation](./01_VPN_Profile_Creation.PNG)
+![VPN Networking Stack](04_VPN_Networking_Stack.PNG)
 
 ---
 
